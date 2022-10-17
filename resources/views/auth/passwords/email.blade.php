@@ -2,12 +2,10 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Crosslink</title>
-  <!-- <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'> -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
+  <title>Fashion World</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="{{asset('style.css')}}">
-<style>
+  <style>
     .html body{
         height: 100%;
         background-repeat: no-repeat;    /*background-image: linear-gradient(rgb(12, 97, 33),rgb(104, 145, 162));*/
@@ -17,7 +15,7 @@
     .card{
         position: absolute;
         top: 150px;
-        left: 50%;
+        left: 70%;
         transform: translateX(-50%);
         min-width: 650px;
         margin: 0 auto;
@@ -39,7 +37,7 @@
 
     .card-body button.btn-custom {
         border-radius: 2px;
-        /* margin-top: 8px; */
+        margin-top: 8px;
         background:#FDE428;
         border-color: rgba(48, 46, 45, 1);
         color: white;
@@ -111,7 +109,6 @@
 </div>
 <div id="particles-js"></div>
 <!-- partial -->
-<!-- <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'></script> -->
 <script src='https://code.jquery.com/jquery-1.11.1.min.js'></script>
 <script src="{{asset('script.js')}}"></script>
 </body>

@@ -13,6 +13,7 @@ class NewsletterController extends Controller
     public function index()
     {
         $newsletter=Newsletter::all();
+        //dd($newsletter);
         return view("pages.backends.newsletter.index",["newsletter"=>$newsletter]);
     }
 

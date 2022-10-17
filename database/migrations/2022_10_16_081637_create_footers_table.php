@@ -18,11 +18,6 @@ class CreateFootersTable extends Migration
             $table->string('f_address');
             $table->string('f_phone');
             $table->string('f_email');
-            $table->string('facebook_url');
-            $table->string('twitter_url');
-            $table->string('instagram_url');
-            $table->string('linkedin_url');
-            $table->string('pinterest_url');
             $table->string('visa_img');
             $table->string('mastercard_img');
             $table->string('visa2_img');

@@ -9,6 +9,7 @@ use App\Http\Controllers\Admins\CategoryController;
 use App\Http\Controllers\Admins\SubcategoryController;
 use App\Http\Controllers\Admins\ChildcategoryController;
 use App\Http\Controllers\Admins\QuicklinkController;
+use App\Http\Controllers\Admins\SociallinkController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -99,12 +100,22 @@ Route::delete('delete-child-category', [ChildcategoryController::class, 'destroy
 Route::resource('footer', App\Http\Controllers\Admins\FooterController::class);
 
 
+////////////////////Topbar/////////////////////////////////
+Route::resource('topbar', App\Http\Controllers\Admins\TopbarController::class);
+
+
+//////////////////////Sociallinks/////////////////////////////////
+Route::resource('social-link', App\Http\Controllers\Admins\SociallinkController::class);
+Route::get('edit-social-link/{id}', [SociallinkController::class, 'edit']);
+Route::put('social-link-update', [SociallinkController::class, 'update']);
+Route::delete('delete-social-link', [SociallinkController::class, 'destroy']);
+
+
 // ////////////////////QuickLinks/////////////////////////////////
 Route::resource('quick-link', App\Http\Controllers\Admins\QuicklinkController::class);
 Route::get('edit-quick-link/{id}', [QuicklinkController::class, 'edit']);
 Route::put('quick-link-update', [QuicklinkController::class, 'update']);
 Route::delete('delete-quick-link', [QuicklinkController::class, 'destroy']);
-
 
 
 ////////////////////User/////////////////////////

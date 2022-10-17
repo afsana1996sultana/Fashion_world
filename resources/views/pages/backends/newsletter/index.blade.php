@@ -2,7 +2,6 @@
 @section("css")
 <link rel="stylesheet" href="{{url('backends/assets/modules/datatables/dataTables.bootstrap4.min.css')}}">
 <link rel="stylesheet" href="{{url('backends/assets/modules/datatables/datatables.min.css')}}">
-<link rel="stylesheet" href="{{url('backends/assets/bootstrap4-toggle-3.6.1/css/bootstrap4-toggle.min.css')}}">
 @endsection
 
 @section('page')
@@ -27,6 +26,7 @@
 								<thead>
 									<tr>
 										<th class="sorting sorting_asc">SN</th>
+										<th class="sorting">Name</th>
 										<th class="sorting">Email</th>
 										<th class="sorting">Action</th>
 									</tr>
@@ -35,6 +35,7 @@
 									@forelse ($newsletter as $newsletter)
 									<tr class="odd">
 										<td>{{$newsletter-> id}}</td>
+										<td>{{$newsletter-> email}}</td>
 										<td>{{$newsletter-> email}}</td>
 										<td class="text-right py-0 align-middle">
 											<div class="btn-group btn-group-sm">
@@ -57,7 +58,7 @@
 </div>
 <!-- show Newsletter Modal -->
 <div id="show___newsletter" class="modal custom-modal fade" role="dialog">
-	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title">Show newsletter</h5>
@@ -112,7 +113,6 @@
 <script src="{{url('backends/assets/modules/datatables/datatables.min.js')}}"></script>
 <script src="{{url('backends/assets/modules/datatables/dataTables.bootstrap4.min.js')}}"></script>
 <script src="{{url('backends/assets/modules/datatables/dataTables.select.min.js')}}"></script>
-<script src="{{url('backends/assets/bootstrap4-toggle-3.6.1/js/bootstrap4-toggle.min.js')}}"></script>
 
 <script>
 	$(document).ready(function(){
@@ -146,11 +146,11 @@
     
 	});
 
-$("#table-1").dataTable({
-	"columnDefs": [
-		{ "sortable": false, "targets": [2,3] }
-	]
-});
+	$("#table-1").dataTable({
+		"columnDefs": [
+			{ "sortable": false, "targets": [2,3] }
+		]
+	});
 
 </script>
 @endsection

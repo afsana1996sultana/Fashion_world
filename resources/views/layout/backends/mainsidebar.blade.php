@@ -46,12 +46,7 @@
       <li class="nav-item dropdown">
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-globe"></i><span>Manage Website</span></a>
         <ul class="dropdown-menu">
-          <li class=""><a class="nav-link" href="">SEO Setup</a></li>
-          <li class=""><a class="nav-link" href="">Topbar Contact</a></li>
-          <li class=""><a class="nav-link" href="">Slider</a></li>
-          <li class=""><a class="nav-link" href="">Home Page</a></li>
-          <li class=""><a class="nav-link" href="">Home Page One Visibility</a></li>
-          <li class=""><a class="nav-link" href="">Menu visibility</a></li>
+          <li class=""><a class="nav-link" href="{{url('topbar/1/edit')}}">Topbar Contact</a></li>
         </ul>
       </li>
 
@@ -59,6 +54,7 @@
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i><span>Website Footer</span></a>
         <ul class="dropdown-menu">
           <li class=""><a class="nav-link" href="{{url('footer/1/edit')}}">Footer</a></li>
+          <li class=""><a class="nav-link" href="{{url('/social-link')}}">Social Links</a></li>
           <li class=""><a class="nav-link" href="{{url('/quick-link')}}">Quick Links</a></li>
         </ul>
       </li>

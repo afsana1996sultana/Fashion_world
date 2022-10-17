@@ -2,8 +2,8 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Crosslink</title>
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'>
+  <title>Fashion World</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="{{asset('style.css')}}">
 <style>
     .html body{
@@ -131,7 +131,6 @@
 </div>
 <div id="particles-js"></div>
 <!-- partial -->
-<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'></script>
 <script src='https://code.jquery.com/jquery-1.11.1.min.js'></script>
 <script src="{{asset('script.js')}}"></script>
 

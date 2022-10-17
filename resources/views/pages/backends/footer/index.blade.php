@@ -96,34 +96,6 @@
                                             <input type="file" name="fileexpresscard" class="form-control-file">
                                         </div>
                                     </div>
-                                    
-                                  
-                                    <div class="form-group col-6">
-                                        <label>Facebook Link <span class="text-danger">*</span></label>
-                                        <input type="text" name="txtFacebookUrl" class="form-control" value="{{$footer->facebook_url}}">
-                                    </div>
-
-
-                                    <div class="form-group col-6">
-                                        <label>Twitter Link <span class="text-danger">*</span></label>
-                                        <input type="text" name="txtTwitterUrl" class="form-control" value="{{$footer->twitter_url}}">
-                                    </div>
-
-
-                                    <div class="form-group col-6">
-                                        <label>Instagram Link <span class="text-danger">*</span></label>
-                                        <input type="text" name="txtInstagramUrl" class="form-control" value="{{$footer->instagram_url}}">
-                                    </div>
-
-                                    <div class="form-group col-6">
-                                        <label>Linkedin Link <span class="text-danger">*</span></label>
-                                        <input type="text" name="txtLinkedinUrl" class="form-control" value="{{$footer->linkedin_url}}">
-                                    </div>
-
-                                    <div class="form-group col-6">
-                                        <label>Pinterest Link <span class="text-danger">*</span></label>
-                                        <input type="text" name="txtPinterestUrl" class="form-control" value="{{$footer->pinterest_url}}">
-                                    </div>
 
                                     <div class="form-group col-6">
                                         <label>Copyright <span class="text-danger">*</span></label>

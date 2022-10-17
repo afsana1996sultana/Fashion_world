@@ -73,32 +73,7 @@ class FooterController extends Controller
         if(isset($request->txtFooteremail)){
             $footer->f_email=$request->txtFooteremail;
         }
-
-
-        if(isset($request->txtFacebookUrl)){
-            $footer->facebook_url=$request->txtFacebookUrl;
-        }
-
-
-        if(isset($request->txtTwitterUrl)){
-            $footer->twitter_url=$request->txtTwitterUrl;
-        }
-
-
-        if(isset($request->txtInstagramUrl)){
-            $footer->instagram_url=$request->txtInstagramUrl;
-        }
-
-
-        if(isset($request->txtLinkedinUrl)){
-            $footer->linkedin_url=$request->txtLinkedinUrl;
-        }
-
-
-        if(isset($request->txtPinterestUrl)){
-            $footer->pinterest_url=$request->txtPinterestUrl;
-        }
-
+        
 
         if(isset($request->txtfootercopyright)){
           $footer->f_copyright=$request->txtfootercopyright;
