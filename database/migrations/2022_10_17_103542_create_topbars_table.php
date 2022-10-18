@@ -19,6 +19,8 @@ class CreateTopbarsTable extends Migration
             $table->string('phone');
             $table->string('account');
             $table->string('login');
+            $table->string('front_logo');
+            $table->string('front_white_logo');
             $table->softDeletes();
             $table->timestamps();
         });

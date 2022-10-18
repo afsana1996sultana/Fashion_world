@@ -10,9 +10,9 @@ use App\Http\Controllers\Admins\SubcategoryController;
 use App\Http\Controllers\Admins\ChildcategoryController;
 use App\Http\Controllers\Admins\QuicklinkController;
 use App\Http\Controllers\Admins\SociallinkController;
+use App\Http\Controllers\Frontend\AboutusController;
+use App\Http\Controllers\Frontend\OurteamController;
 use Illuminate\Support\Facades\Auth;
-
-
 
 
 
@@ -43,6 +43,14 @@ Route::get('home', [App\Http\Controllers\FrontendController::class, 'home'])->na
 
 ////////////////////Newsletter-Post/////////////////////////
 Route::post('newsletter_store',[NewsletterController::class,'store' ])->name('newsletter_store');
+
+
+////////////////////About-Us/////////////////////////
+Route::get('/about-us',[AboutusController::class,'index' ]);
+
+
+////////////////////Our-Team/////////////////////////
+Route::get('/our-team',[OurteamController::class,'index' ]);
 
 
 Route::get('admin', function(){

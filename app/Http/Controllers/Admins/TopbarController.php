@@ -26,6 +26,20 @@ class TopbarController extends Controller
     public function update(Request $request,$id){
         $topbar = Topbar::find($id);
 
+        if(isset($request->fileLogo)){
+            $LogoName = time().(rand(100,1000)).'.'.$request->fileLogo->extension();
+            $topbar->front_logo=$LogoName;
+            $request->fileLogo->move(public_path('img'),$LogoName);
+        }
+
+
+        if(isset($request->fileWhiteLogo)){
+            $WhiteLogoName = time().(rand(100,1000)).'.'.$request->fileWhiteLogo->extension();
+            $topbar->front_white_logo=$WhiteLogoName;
+            $request->fileWhiteLogo->move(public_path('img'),$WhiteLogoName);
+        }
+
+
         if(isset($request->txtTitle)){
             $topbar->title=$request->txtTitle;
         }

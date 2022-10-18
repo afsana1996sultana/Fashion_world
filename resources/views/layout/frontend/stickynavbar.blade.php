@@ -3,10 +3,12 @@
         <div class="container">
             <div class="xton-responsive-menu">
                 <div class="logo">
-                    <a href="index-2.html">
-                    <img src="{{url('frontend/assets/img/logo-1.png')}}" class="main-logo" alt="logo">
-                    <img src="{{url('frontend/assets/img/white-logo-1.png')}}" class="white-logo" alt="logo">
+                @foreach ($topbar as $val)
+                    <a href="{{url('/')}}">
+                        <img src="{{ asset('img/' . $val->front_logo) }}" class="main-logo" alt="logo">
+                        <img src="{{ asset('img/' . $val->front_white_logo) }}" class="white-logo" alt="logo">
                     </a>
+                @endforeach
                 </div>
             </div>
         </div>
@@ -15,21 +17,23 @@
     <div class="xton-nav">
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="index-2.html">
-                    <img src="{{url('frontend/assets/img/logo-1.png')}}" class="main-logo" alt="logo">
-                    <img src="{{url('frontend/assets/img/white-logo-1.png')}}" class="white-logo" alt="logo">
+                @foreach ($topbar as $val)
+                <a class="navbar-brand" href="{{url('/')}}">
+                    <img src="{{ asset('img/' . $val->front_logo) }}" class="main-logo" alt="logo">
+                    <img src="{{ asset('img/' . $val->front_white_logo) }}" class="white-logo" alt="logo">
                 </a>
+                @endforeach
 
                 <div class="collapse navbar-collapse mean-menu">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                        <li class="nav-item"><a href="{{url('/home')}}" class="nav-link active">Home</a></li>
 
-                        <li class="nav-item"><a href="#" class="nav-link">About Us<i class='bx bx-chevron-down'></i></a>
+                        <li class="nav-item"><a href="{{url('/about-us')}}" class="nav-link">About Us<i class='bx bx-chevron-down'></i></a>
                             <ul class="dropdown-menu">
-                                <li class="nav-item"><a href="" class="nav-link">Our Team</a></li>
-                                <li class="nav-item"><a href="" class="nav-link">Mission & Vission</a></li>
-                                <li class="nav-item"><a href="" class="nav-link">Core Values</a></li>
-                                <li class="nav-item"><a href="" class="nav-link">Company Flowchart</a></li>
+                                <li class="nav-item"><a href="{{url('/our-team')}}" class="nav-link">Our Team</a></li>
+                                <li class="nav-item"><a href="{{url('/mission-vission')}}" class="nav-link">Mission & Vission</a></li>
+                                <li class="nav-item"><a href="{{url('/core-values')}}" class="nav-link">Core Values</a></li>
+                                <li class="nav-item"><a href="{{url('/company-flowchart')}}" class="nav-link">Company Flowchart</a></li>
                             </ul>
                         </li>
 

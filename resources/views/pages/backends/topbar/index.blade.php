@@ -18,6 +18,32 @@
                                 @csrf
                                 @method('PUT')
                                 <div class="row"> 
+                                    <div class="form-group col-4">
+                                        <label for="">Existing Logo</label>
+                                        <div>
+                                            <img src="{{asset('img/'.$topbar->front_logo)}}" alt="" sizes="" srcset="" height="32px" width="100px"> 
+                                        </div>
+
+                                        <div>
+                                            <label for="">Logo</label>
+                                            <input type="file" name="fileLogo" class="form-control-file">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group col-4">
+                                        <label for="">Existing White Logo</label>
+                                        <div>
+                                            <img src="{{asset('img/'.$topbar->front_white_logo)}}" alt="" sizes="" srcset="" height="32px" width="100px"> 
+                                        </div>
+
+                                        <div>
+                                            <label for="">White Logo</label>
+                                            <input type="file" name="fileWhiteLogo" class="form-control-file">
+                                        </div>
+                                    </div>
+
+
                                     <div class="form-group col-6">
                                         <label>Title <span class="text-danger">*</span></label>
                                         <input type="text" name="txtTitle" class="form-control" value="{{$topbar->title}}">
