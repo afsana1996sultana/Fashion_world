@@ -12,6 +12,13 @@ use App\Http\Controllers\Admins\QuicklinkController;
 use App\Http\Controllers\Admins\SociallinkController;
 use App\Http\Controllers\Frontend\AboutusController;
 use App\Http\Controllers\Frontend\OurteamController;
+use App\Http\Controllers\Frontend\MissionvissionController;
+use App\Http\Controllers\Frontend\CorevalueController;
+use App\Http\Controllers\Frontend\CompanyflowchartController;
+use App\Http\Controllers\Frontend\ServiceController;
+use App\Http\Controllers\Frontend\ChooseusController;
+use App\Http\Controllers\Frontend\OurclientController;
+use App\Http\Controllers\Frontend\ContactusController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -51,6 +58,34 @@ Route::get('/about-us',[AboutusController::class,'index' ]);
 
 ////////////////////Our-Team/////////////////////////
 Route::get('/our-team',[OurteamController::class,'index' ]);
+
+
+////////////////////Mission-Vission/////////////////////////
+Route::get('/mission-vission',[MissionvissionController::class,'index' ]);
+
+
+////////////////////Core-Values/////////////////////////
+Route::get('/core-values',[CorevalueController::class,'index' ]);
+
+
+////////////////////Company-flowchart/////////////////////////
+Route::get('/company-flowchart',[CompanyflowchartController::class,'index' ]);
+
+
+////////////////////Service/////////////////////////
+Route::get('/services',[ServiceController::class,'index' ]);
+
+
+////////////////////Why-Choose-Us/////////////////////////
+Route::get('/why-choose-us',[ChooseusController::class,'index' ]);
+
+
+////////////////////Our-Client/////////////////////////
+Route::get('/our-clients',[OurclientController::class,'index' ]);
+
+
+////////////////////Contact-us/////////////////////////
+Route::get('/contact',[ContactusController::class,'index' ]);
 
 
 Route::get('admin', function(){

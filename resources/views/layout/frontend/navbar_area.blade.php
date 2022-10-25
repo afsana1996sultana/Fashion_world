@@ -41,7 +41,7 @@
                             <?php
                             $Subcategory = App\Models\Subcategory::where('category', $val->id)->get();
                             ?>
-                            <li class="nav-item megamenu"><a href="#" class="nav-link">{{ $val->c_name }} 
+                            <li class="nav-item megamenu"><a href="{{ $val->slug }}" class="nav-link">{{ $val->c_name }} 
                                 <i class='@if(sizeof($Subcategory) >= 1) bx bx-chevron-down @endif'></i></a>
                                 @if(sizeof($Subcategory) >= 1)
                                 <ul class="@if(sizeof($Subcategory) >= 1) dropdown-menu @endif">
