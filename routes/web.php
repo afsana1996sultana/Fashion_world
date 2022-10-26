@@ -5,6 +5,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admins\UserController;
 use App\Http\Controllers\Admins\NewsletterController;
 use App\Http\Controllers\Admins\StatusController;
+use App\Http\Controllers\Admins\BrandController;
+use App\Http\Controllers\Admins\UnitController;
+use App\Http\Controllers\Admins\ProductController;
 use App\Http\Controllers\Admins\CategoryController;
 use App\Http\Controllers\Admins\SubcategoryController;
 use App\Http\Controllers\Admins\ChildcategoryController;
@@ -19,6 +22,7 @@ use App\Http\Controllers\Frontend\ServiceController;
 use App\Http\Controllers\Frontend\ChooseusController;
 use App\Http\Controllers\Frontend\OurclientController;
 use App\Http\Controllers\Frontend\ContactusController;
+use App\Http\Controllers\Frontend\ProductchildcategoryController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -88,6 +92,13 @@ Route::get('/our-clients',[OurclientController::class,'index' ]);
 Route::get('/contact',[ContactusController::class,'index' ]);
 
 
+////////////////////Product-Child-Category/////////////////////////
+Route::get('sub_c_name/{slug}', [ProductchildcategoryController::class, 'product_child_category']);
+
+
+Route::get('for-sub-cat', [ProductController::class, 'showSubCat'])->name('for-sub-cat');
+Route::get('for-child-cat', [ProductController::class, 'showChildCat'])->name('for-child-cat');
+
 Route::get('admin', function(){
     return redirect('login');
 });
@@ -114,6 +125,19 @@ Route::put('status-update', [StatusController::class, 'update']);
 Route::delete('delete-status', [StatusController::class, 'destroy']);
 
 
+// ////////////////////Brands/////////////////////////////////
+Route::resource('brands', App\Http\Controllers\Admins\BrandController::class);
+Route::get('edit-brands/{id}', [BrandController::class, 'edit']);
+Route::put('brands-update', [BrandController::class, 'update']);
+Route::delete('delete-brands', [BrandController::class, 'destroy']);
+
+
+// ////////////////////Unit/////////////////////////////////
+Route::resource('units', App\Http\Controllers\Admins\UnitController::class);
+Route::get('edit-units/{id}', [UnitController::class, 'edit']);
+Route::put('units-update', [UnitController::class, 'update']);
+Route::delete('delete-units', [UnitController::class, 'destroy']);
+
 
 // ////////////////////Category/////////////////////////////////
 Route::resource('category', App\Http\Controllers\Admins\CategoryController::class);
@@ -137,6 +161,10 @@ Route::get('edit-child-category/{id}', [ChildcategoryController::class, 'edit'])
 Route::put('child-category-update', [ChildcategoryController::class, 'update']);
 Route::delete('delete-child-category', [ChildcategoryController::class, 'destroy']);
 
+
+///////////////////////Product/////////////////////////////////
+Route::resource('products', App\Http\Controllers\Admins\ProductController::class);
+Route::delete('delete-products', [ProductController::class, 'destroy']);
 
 
 ////////////////////Footer/////////////////////////////////

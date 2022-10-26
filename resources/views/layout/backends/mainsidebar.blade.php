@@ -21,7 +21,7 @@
         <ul class="dropdown-menu">
           <li class=""><a class="nav-link" href="">General Setting</a></li>
           <li class=""><a class="nav-link" href="{{url('/status')}}">Status</a></li>
-          <li class=""><a class="nav-link" href="">Units</a></li>
+          <li class=""><a class="nav-link" href="{{url('/units')}}">Units</a></li>
         </ul>
       </li>
 
@@ -37,9 +37,9 @@
       <li class="nav-item dropdown">
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i><span>Manage Products</span></a>
         <ul class="dropdown-menu">
-          <li class=""><a class="nav-link" href="brands">Brands</a></li>
-          <li><a class="nav-link" href="">Create Product</a></li>
-          <li class=""><a class="nav-link" href="">Products</a></li>
+          <li class=""><a class="nav-link" href="{{url('/brands')}}">Brands</a></li>
+          <li><a class="nav-link" href="{{ route('products.create') }}">Create Product</a></li>
+          <li class=""><a class="nav-link" href="{{url('/products')}}">Products</a></li>
         </ul>
       </li>
 

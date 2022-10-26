@@ -57,7 +57,7 @@
                                                         @if(sizeof($childcategory) >= 1)
                                                         <ul class="megamenu-submenu">
                                                             @foreach($childcategory as $chData)
-                                                            <li><a href="">{{$chData->child_c_name}}</a></li>
+                                                            <li><a href="{{url('sub_c_name/'.$chData->slug)}}">{{$chData->child_c_name}}</a></li>
                                                             @endforeach
                                                         </ul>
                                                     </div>
