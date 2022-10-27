@@ -11,27 +11,15 @@ class ProductchildcategoryController extends Controller
 {
     public function product_child_category(Request $request){
 
+    $data['ChildcategoryId'] = Childcategory::where('slug',$request->slug)->select('id','child_c_name')->first();
 
-        $data['ChildcategoryId'] = Childcategory::where('slug',$request->slug)
-        ->join('users','users.id', '=', 'comments.user_id')
-        ->select('id','child_c_name','sub_category')->first();
+        // return $request;
 
-
-
-        $data['ProductData'] = Products::where('products.slug',$request->slug)
-        ->join('categories','categories.id', '=', 'products.category')
-        ->join('brands','brands.id', '=', 'products.brand')
-        ->select('categories.c_name', 'brands.name', 'products.*')
-        ->first();
-        // return $SubcategoryId->id;
-
-        $data['comments'] = Comment::where("blog_id",$blogId->id)
-        ->where('reply_id',NULL)
-        ->join('users','users.id', '=', 'comments.user_id')
-        ->select('users.name', 'comments.*')
-        ->orderBy('id','DESC')
-        ->get();
-
+        // $data['ChildcategoryId'] = Childcategory::where('slug',$request->slug)
+        // ->join('subcategories','subcategories.id', '=', 'childcategories.sub_category')
+        // ->select('subcategories.sub_c_name','childcategories.*')
+        // ->first();
+        
         $data['ProductData'] = Product::where('child_category',$data['ChildcategoryId']->id)
         ->paginate(18);
 

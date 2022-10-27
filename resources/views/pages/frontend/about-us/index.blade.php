@@ -105,29 +105,11 @@
         </div>
 
         <div class="partner-slides owl-carousel owl-theme">
-            <div class="partner-item">
-                <a href=""><img src="{{url('frontend/assets/img/partner/partner1.png')}}" alt="image"></a>
-            </div>
-
-            <div class="partner-item">
-                <a href=""><img src="{{url('frontend/assets/img/partner/partner2.png')}}" alt="image"></a>
-            </div>
-
-            <div class="partner-item">
-                <a href=""><img src="{{url('frontend/assets/img/partner/partner3.png')}}" alt="image"></a>
-            </div>
-
-            <div class="partner-item">
-                <a href=""><img src="{{url('frontend/assets/img/partner/partner4.png')}}" alt="image"></a>
-            </div>
-
-            <div class="partner-item">
-                <a href=""><img src="{{url('frontend/assets/img/partner/partner5.png')}}" alt="image"></a>
-            </div>
-
-            <div class="partner-item">
-                <a href=""><img src="{{url('frontend/assets/img/partner/partner6.png')}}" alt="image"></a>
-            </div>
+            @foreach($partner as $val)
+                <div class="partner-item">
+                    <a href=""><img src="{{url('img/'.$val->partner_logo)}}" alt="image"></a>
+                </div>
+            @endforeach
         </div>
     </div>
 </div>

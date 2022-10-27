@@ -13,6 +13,8 @@ use App\Http\Controllers\Admins\SubcategoryController;
 use App\Http\Controllers\Admins\ChildcategoryController;
 use App\Http\Controllers\Admins\QuicklinkController;
 use App\Http\Controllers\Admins\SociallinkController;
+use App\Http\Controllers\Admins\PartnerController;
+use App\Http\Controllers\Admins\TeamController;
 use App\Http\Controllers\Frontend\AboutusController;
 use App\Http\Controllers\Frontend\OurteamController;
 use App\Http\Controllers\Frontend\MissionvissionController;
@@ -93,7 +95,7 @@ Route::get('/contact',[ContactusController::class,'index' ]);
 
 
 ////////////////////Product-Child-Category/////////////////////////
-Route::get('sub_c_name/{slug}', [ProductchildcategoryController::class, 'product_child_category']);
+Route::get('product_child_category/{slug}', [ProductchildcategoryController::class, 'product_child_category']);
 
 
 Route::get('for-sub-cat', [ProductController::class, 'showSubCat'])->name('for-sub-cat');
@@ -187,6 +189,20 @@ Route::resource('quick-link', App\Http\Controllers\Admins\QuicklinkController::c
 Route::get('edit-quick-link/{id}', [QuicklinkController::class, 'edit']);
 Route::put('quick-link-update', [QuicklinkController::class, 'update']);
 Route::delete('delete-quick-link', [QuicklinkController::class, 'destroy']);
+
+
+// ////////////////////Our-Partners/////////////////////////////////
+Route::resource('partners', App\Http\Controllers\Admins\PartnerController::class);
+Route::get('edit-partners/{id}', [PartnerController::class, 'edit']);
+Route::put('partners-update', [PartnerController::class, 'update']);
+Route::delete('delete-partners', [PartnerController::class, 'destroy']);
+
+
+// ////////////////////Our-Team/////////////////////////////////
+Route::resource('team', App\Http\Controllers\Admins\TeamController::class);
+Route::get('edit-team/{id}', [TeamController::class, 'edit']);
+Route::put('team-update', [TeamController::class, 'update']);
+Route::delete('delete-team', [TeamController::class, 'destroy']);
 
 
 ////////////////////User/////////////////////////

@@ -106,7 +106,7 @@ class ProductController extends Controller
         $product->deleted_at=$request->txtDeleted_at;
 
         if(isset($request->file_img)){
-            $imgName = (rand(100,1000)).'.'.$request->file_img->extension();
+            $imgName = time().(rand(100,1000)).'.'.$request->file_img->extension();
             $product->img=$imgName;
             $product->update();
             $request->file_img->move(public_path('img'),$imgName);
@@ -114,7 +114,7 @@ class ProductController extends Controller
 
 
         if(isset($request->file_bannerimg)){
-            $bannerimgName = (rand(100,1000)).'.'.$request->file_bannerimg->extension();
+            $imgName = time().(rand(100,1000)).'.'.$request->file_bannerimg->extension();
             $product->banner_img=$bannerimgName;
             $product->update();
             $request->file_bannerimg->move(public_path('img'),$bannerimgName);
@@ -224,13 +224,13 @@ class ProductController extends Controller
         }
 
         if(isset($request->file_img)){
-            $imgName = (rand(100,1000)).'.'.$request->file_img->extension();
+            $imgName = time().(rand(100,1000)).'.'.$request->file_img->extension();
             $product->img=$imgName;
             $request->file_img->move(public_path('img'),$imgName);
         }
         
         if(isset($request->file_bannerimg)){
-            $bannerimgName = (rand(100,1000)).'.'.$request->file_bannerimg->extension();
+            $imgName = time().(rand(100,1000)).'.'.$request->file_bannerimg->extension();
             $product->banner_img=$bannerimgName;
             $request->file_bannerimg->move(public_path('img'),$bannerimgName);
         }

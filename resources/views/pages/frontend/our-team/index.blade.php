@@ -19,19 +19,20 @@
         </div>
 
         <div class="row">
+        @foreach($team as $val)
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="single-products-box">
                     <div class="products-image">
                         <a href="products-type-1.html">
-                            <img src="{{url('frontend/assets/img/products/img1.jpg')}}" class="main-image" alt="image">
-                            <img src="{{url('frontend/assets/img/products/img1.jpg')}}" class="hover-image" alt="image">
+                            <img src="{{url('img/'.$val->img)}}" class="main-image" alt="image">
+                            <img src="{{url('img/'.$val->img)}}" class="hover-image" alt="image">
                         </a>
 
                         <div class="products-button">
                             <ul>
                                 <li>
                                     <div class="wishlist-btn">
-                                        <a href="#">
+                                        <a href="{{ $val->facebook_url }}">
                                             <i class='bx bxl-facebook'></i>
                                             <span class="tooltip-label">Facebook</span>
                                         </a>
@@ -40,7 +41,7 @@
 
                                 <li>
                                     <div class="compare-btn">
-                                        <a href="#">
+                                        <a href="{{ $val->twitter_url }}">
                                             <i class='bx bxl-twitter'></i>
                                             <span class="tooltip-label">Twitter</span>
                                         </a>
@@ -49,7 +50,7 @@
 
                                 <li>
                                     <div class="compare-btn">
-                                        <a href="#">
+                                        <a href="{{ $val->instagram_url }}">
                                             <i class='bx bxl-instagram'></i>
                                             <span class="tooltip-label">Instagram</span>
                                         </a>
@@ -58,7 +59,7 @@
 
                                 <li>
                                     <div class="compare-btn">
-                                        <a href="#">
+                                        <a href="{{ $val->linkedin_url }}">
                                             <i class='bx bxl-linkedin'></i>
                                             <span class="tooltip-label">Linkedin</span>
                                         </a>
@@ -78,202 +79,12 @@
                     </div>
 
                     <div class="products-content">
-                        <h3>Long Sleeve Leopard T-Shirt</h3>
+                        <h3>{{ $val->name }}</h3>
+                        <h6 style="text-align: center;">{{ $val->designation }}</h6>
                     </div>
                 </div>
             </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-products-box">
-                    <div class="products-image">
-                        <a href="products-type-1.html">
-                            <img src="{{url('frontend/assets/img/products/img1.jpg')}}" class="main-image" alt="image">
-                            <img src="{{url('frontend/assets/img/products/img1.jpg')}}" class="hover-image" alt="image">
-                        </a>
-
-                        <div class="products-button">
-                            <ul>
-                                <li>
-                                    <div class="wishlist-btn">
-                                        <a href="#">
-                                            <i class='bx bxl-facebook'></i>
-                                            <span class="tooltip-label">Facebook</span>
-                                        </a>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="compare-btn">
-                                        <a href="#">
-                                            <i class='bx bxl-twitter'></i>
-                                            <span class="tooltip-label">Twitter</span>
-                                        </a>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="compare-btn">
-                                        <a href="#">
-                                            <i class='bx bxl-instagram'></i>
-                                            <span class="tooltip-label">Instagram</span>
-                                        </a>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="compare-btn">
-                                        <a href="#">
-                                            <i class='bx bxl-linkedin'></i>
-                                            <span class="tooltip-label">Linkedin</span>
-                                        </a>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="quick-view-btn">
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
-                                            <i class='bx bx-search-alt'></i>
-                                            <span class="tooltip-label">Quick View</span>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="products-content">
-                        <h3>Long Sleeve Leopard T-Shirt</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-products-box">
-                    <div class="products-image">
-                        <a href="products-type-1.html">
-                            <img src="{{url('frontend/assets/img/products/img1.jpg')}}" class="main-image" alt="image">
-                            <img src="{{url('frontend/assets/img/products/img1.jpg')}}" class="hover-image" alt="image">
-                        </a>
-
-                        <div class="products-button">
-                            <ul>
-                                <li>
-                                    <div class="wishlist-btn">
-                                        <a href="#">
-                                            <i class='bx bxl-facebook'></i>
-                                            <span class="tooltip-label">Facebook</span>
-                                        </a>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="compare-btn">
-                                        <a href="#">
-                                            <i class='bx bxl-twitter'></i>
-                                            <span class="tooltip-label">Twitter</span>
-                                        </a>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="compare-btn">
-                                        <a href="#">
-                                            <i class='bx bxl-instagram'></i>
-                                            <span class="tooltip-label">Instagram</span>
-                                        </a>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="compare-btn">
-                                        <a href="#">
-                                            <i class='bx bxl-linkedin'></i>
-                                            <span class="tooltip-label">Linkedin</span>
-                                        </a>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="quick-view-btn">
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
-                                            <i class='bx bx-search-alt'></i>
-                                            <span class="tooltip-label">Quick View</span>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="products-content">
-                        <h3>Long Sleeve Leopard T-Shirt</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="single-products-box">
-                    <div class="products-image">
-                        <a href="products-type-1.html">
-                            <img src="{{url('frontend/assets/img/products/img1.jpg')}}" class="main-image" alt="image">
-                            <img src="{{url('frontend/assets/img/products/img1.jpg')}}" class="hover-image" alt="image">
-                        </a>
-
-                        <div class="products-button">
-                            <ul>
-                                <li>
-                                    <div class="wishlist-btn">
-                                        <a href="#">
-                                            <i class='bx bxl-facebook'></i>
-                                            <span class="tooltip-label">Facebook</span>
-                                        </a>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="compare-btn">
-                                        <a href="#">
-                                            <i class='bx bxl-twitter'></i>
-                                            <span class="tooltip-label">Twitter</span>
-                                        </a>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="compare-btn">
-                                        <a href="#">
-                                            <i class='bx bxl-instagram'></i>
-                                            <span class="tooltip-label">Instagram</span>
-                                        </a>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="compare-btn">
-                                        <a href="#">
-                                            <i class='bx bxl-linkedin'></i>
-                                            <span class="tooltip-label">Linkedin</span>
-                                        </a>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="quick-view-btn">
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#productsQuickView">
-                                            <i class='bx bx-search-alt'></i>
-                                            <span class="tooltip-label">Quick View</span>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="products-content">
-                        <h3>Long Sleeve Leopard T-Shirt</h3>
-                    </div>
-                </div>
-            </div>
+        @endforeach
         </div>
     </div>
 </section>
@@ -285,29 +96,11 @@
         </div>
 
         <div class="partner-slides owl-carousel owl-theme">
-            <div class="partner-item">
-                <a href=""><img src="{{url('frontend/assets/img/partner/partner1.png')}}" alt="image"></a>
-            </div>
-
-            <div class="partner-item">
-                <a href=""><img src="{{url('frontend/assets/img/partner/partner2.png')}}" alt="image"></a>
-            </div>
-
-            <div class="partner-item">
-                <a href=""><img src="{{url('frontend/assets/img/partner/partner3.png')}}" alt="image"></a>
-            </div>
-
-            <div class="partner-item">
-                <a href=""><img src="{{url('frontend/assets/img/partner/partner4.png')}}" alt="image"></a>
-            </div>
-
-            <div class="partner-item">
-                <a href=""><img src="{{url('frontend/assets/img/partner/partner5.png')}}" alt="image"></a>
-            </div>
-
-            <div class="partner-item">
-                <a href=""><img src="{{url('frontend/assets/img/partner/partner6.png')}}" alt="image"></a>
-            </div>
+            @foreach($partner as $val)
+                <div class="partner-item">
+                    <a href=""><img src="{{url('img/'.$val->partner_logo)}}" alt="image"></a>
+                </div>
+            @endforeach
         </div>
     </div>
 </div>

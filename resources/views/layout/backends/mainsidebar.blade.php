@@ -64,7 +64,8 @@
         <ul class="dropdown-menu">
             <li class=""><a class="nav-link" href="">About Us</a></li>
             <li class=""><a class="nav-link" href="">Contact Us</a></li>
-            <li class=""><a class="nav-link" href="">Terms And Conditions</a></li>
+            <li class=""><a class="nav-link" href="{{url('/team')}}">Our Team</a></li>
+            <li class=""><a class="nav-link" href="{{url('/partners')}}">Our Partners</a></li>
             <li class=""><a class="nav-link" href="">Privacy Policy</a></li>
             <li class=""><a class="nav-link" href="">FAQ</a></li>
             <li class=""><a class="nav-link" href="">Login Page</a></li>
