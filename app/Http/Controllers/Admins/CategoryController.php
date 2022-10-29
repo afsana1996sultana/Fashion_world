@@ -12,7 +12,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $categories=Category::all();
+        //$categories=Category::all();
         $status=Status::all();
 
         $categories =DB::table('categories')

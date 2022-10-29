@@ -47,6 +47,9 @@
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-globe"></i><span>Manage Website</span></a>
         <ul class="dropdown-menu">
           <li class=""><a class="nav-link" href="{{url('topbar/1/edit')}}">Topbar Contact</a></li>
+          <li class=""><a class="nav-link" href="{{url('/story')}}">Story</a></li>
+          <li class=""><a class="nav-link" href="{{url('/values')}}">Values</a></li>
+          <li class=""><a class="nav-link" href="{{url('/promise')}}">Promise</a></li>
         </ul>
       </li>
 
@@ -62,11 +65,11 @@
       <li class="nav-item dropdown ">
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-columns"></i><span>Pages</span></a>
         <ul class="dropdown-menu">
-            <li class=""><a class="nav-link" href="">About Us</a></li>
+            <li class=""><a class="nav-link" href="{{url('about/1/edit')}}">About Us</a></li>
             <li class=""><a class="nav-link" href="">Contact Us</a></li>
             <li class=""><a class="nav-link" href="{{url('/team')}}">Our Team</a></li>
+            <li class=""><a class="nav-link" href="{{url('/testimonial')}}">Testimonial</a></li>
             <li class=""><a class="nav-link" href="{{url('/partners')}}">Our Partners</a></li>
-            <li class=""><a class="nav-link" href="">Privacy Policy</a></li>
             <li class=""><a class="nav-link" href="">FAQ</a></li>
             <li class=""><a class="nav-link" href="">Login Page</a></li>
         </ul>

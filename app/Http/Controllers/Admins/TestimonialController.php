@@ -34,4 +34,43 @@ class TestimonialController extends Controller
         return back()->with('success','Created Successfully.');
           
     }
+
+
+    public function edit($id){
+		$testimonial=Testimonial::find($id);
+		return response()->json([
+			'status'=>200,
+			'testimonial'=>$testimonial
+		]);
+	}
+
+    public function update(Request $request,Testimonial $testimonial){
+        $testimonialid=$request->input('cmbTestimonialId');
+        $testimonial = Testimonial::find($testimonialid);
+        $testimonial->id=$request->cmbTestimonialId; 
+        $testimonial->name=$request->txtName;
+        $testimonial->designation=$request->txtDesignation;
+        $testimonial->detail=$request->txtDetail;
+
+        if(isset($request->filePhoto)){
+            $imgName = time().(rand(100,1000)).'.'.$request->filePhoto->extension();
+			$testimonial->img=$imgName;
+			$request->filePhoto->move(public_path('img'),$imgName);
+		}
+
+        $testimonial->deleted_at=$request->txtDeleted_at;		   
+        $testimonial->update();
+        return redirect()->back()
+        ->with('success',' Updated successfully');               
+    }
+
+
+    public function destroy(Request $request){  
+        $testimonialid=$request->input('d_testimonial');
+		$testimonial= Testimonial::find($testimonialid);
+		$testimonial->delete();
+
+        return redirect()->back()
+        ->with('success',' Deleted successfully');
+    }
 }

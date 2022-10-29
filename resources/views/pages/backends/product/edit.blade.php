@@ -1,6 +1,7 @@
 @extends('layout.backends.home')
 @section("css")
 <link rel="stylesheet" href="{{url('backends/assets/modules/summernote/summernote-bs4.css')}}">
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
 @endsection
 
 @section('page')

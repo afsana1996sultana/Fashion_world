@@ -14,7 +14,7 @@ class ChildcategoryController extends Controller
 {
     public function index()
     {
-        $childcategories=Childcategory::all();
+        //$childcategories=Childcategory::all();
         $categories=Category::all();
         $subcategories=Subcategory::all();
         $status=Status::all();

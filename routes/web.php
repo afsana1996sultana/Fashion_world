@@ -7,6 +7,9 @@ use App\Http\Controllers\Admins\NewsletterController;
 use App\Http\Controllers\Admins\StatusController;
 use App\Http\Controllers\Admins\BrandController;
 use App\Http\Controllers\Admins\UnitController;
+use App\Http\Controllers\Admins\PromiseController;
+use App\Http\Controllers\Admins\StoryController;
+use App\Http\Controllers\Admins\ValueController;
 use App\Http\Controllers\Admins\ProductController;
 use App\Http\Controllers\Admins\CategoryController;
 use App\Http\Controllers\Admins\SubcategoryController;
@@ -15,6 +18,7 @@ use App\Http\Controllers\Admins\QuicklinkController;
 use App\Http\Controllers\Admins\SociallinkController;
 use App\Http\Controllers\Admins\PartnerController;
 use App\Http\Controllers\Admins\TeamController;
+use App\Http\Controllers\Admins\TestimonialController;
 use App\Http\Controllers\Frontend\AboutusController;
 use App\Http\Controllers\Frontend\OurteamController;
 use App\Http\Controllers\Frontend\MissionvissionController;
@@ -177,6 +181,31 @@ Route::resource('footer', App\Http\Controllers\Admins\FooterController::class);
 Route::resource('topbar', App\Http\Controllers\Admins\TopbarController::class);
 
 
+////////////////////About/////////////////////////////////
+Route::resource('about', App\Http\Controllers\Admins\AboutController::class);
+
+
+//////////////////////Story/////////////////////////////////
+Route::resource('story', App\Http\Controllers\Admins\StoryController::class);
+Route::get('edit-story/{id}', [StoryController::class, 'edit']);
+Route::put('story-update', [StoryController::class, 'update']);
+Route::delete('delete-story', [StoryController::class, 'destroy']);
+
+
+//////////////////////Value/////////////////////////////////
+Route::resource('values', App\Http\Controllers\Admins\ValueController::class);
+Route::get('edit-values/{id}', [ValueController::class, 'edit']);
+Route::put('values-update', [ValueController::class, 'update']);
+Route::delete('delete-values', [ValueController::class, 'destroy']);
+
+
+//////////////////////Promise/////////////////////////////////
+Route::resource('promise', App\Http\Controllers\Admins\PromiseController::class);
+Route::get('edit-promise/{id}', [PromiseController::class, 'edit']);
+Route::put('promise-update', [PromiseController::class, 'update']);
+Route::delete('delete-promise', [PromiseController::class, 'destroy']);
+
+
 //////////////////////Sociallinks/////////////////////////////////
 Route::resource('social-link', App\Http\Controllers\Admins\SociallinkController::class);
 Route::get('edit-social-link/{id}', [SociallinkController::class, 'edit']);
@@ -203,6 +232,14 @@ Route::resource('team', App\Http\Controllers\Admins\TeamController::class);
 Route::get('edit-team/{id}', [TeamController::class, 'edit']);
 Route::put('team-update', [TeamController::class, 'update']);
 Route::delete('delete-team', [TeamController::class, 'destroy']);
+
+
+
+// ////////////////////Testimonial/////////////////////////////////
+Route::resource('testimonial', App\Http\Controllers\Admins\TestimonialController::class);
+Route::get('edit-testimonial/{id}', [TestimonialController::class, 'edit']);
+Route::put('testimonial-update', [TestimonialController::class, 'update']);
+Route::delete('delete-testimonial', [TestimonialController::class, 'destroy']);
 
 
 ////////////////////User/////////////////////////
