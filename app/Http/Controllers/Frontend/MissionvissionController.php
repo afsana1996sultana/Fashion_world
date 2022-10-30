@@ -9,6 +9,6 @@ class MissionvissionController extends Controller
 {
     public function index()
     {
-       return view('pages.frontend.core-values.index'); 
+       return view('pages.frontend.mission-vission.index'); 
     }
 }

@@ -8,9 +8,9 @@
                         <p>One of the most popular on the web is shopping.</p>
                         <ul class="footer-contact-info">
                         @foreach ($footer as $val)
-                            <li><i class='bx bx-map'></i> <a href="#" target="_blank">{{ $val->f_address }}</a></li>
-                            <li><i class='bx bx-phone-call'></i> <a href="{{ $val->f_phone }}">{{ $val->f_phone }}</a></li>
-                            <li><i class='bx bx-envelope'></i> <a href="mailto:fashionworld@gmail.com"><span>{{ $val->f_email }}</span></a></li>
+                            <li><i class='bx bx-map'></i> <span>{{ $val->f_address }}</span></li>
+                            <li><i class='bx bx-phone-call'></i> <a href="tel:{{ $val->f_phone }}">{{ $val->f_phone }}</a></li>
+                            <li><i class='bx bx-envelope'></i> <a href="mailto:{{ $val->f_email }}"><span>{{ $val->f_email }}</span></a></li>
                         @endforeach
                         </ul>
                     </div>

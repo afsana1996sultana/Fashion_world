@@ -31,7 +31,7 @@ class BrandController extends Controller
         $brand->deleted_at=$request->txtDeleted_at;
 
         if(isset($request->file_logo)){
-            $logoName = (rand(100,1000)).'.'.$request->file_logo->extension();
+            $logoName = time().(rand(100,1000)).'.'.$request->file_logo->extension();
             $brand->logo=$logoName;
             $brand->update();
             $request->file_logo->move(public_path('img'),$logoName);
@@ -63,7 +63,7 @@ class BrandController extends Controller
         $brand->deleted_at=$request->txtDeleted_at;
         
         if(isset($request->file_logo)){
-            $logoName = (rand(100,1000)).'.'.$request->file_logo->extension();
+            $logoName = time().(rand(100,1000)).'.'.$request->file_logo->extension();
             $brand->logo=$logoName;
             $request->file_logo->move(public_path('img'),$logoName);
         }

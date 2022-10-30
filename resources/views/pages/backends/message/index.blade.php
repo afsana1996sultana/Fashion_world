@@ -8,10 +8,10 @@
 <div class="main-content">
 	<section class="section">
 		<div class="section-header">
-			<h1>Newsletter</h1>
+			<h1>Message</h1>
             <div class="section-header-breadcrumb">
               <div class="breadcrumb-item active"><a href="{{url('/dashboard')}}">Dashboard</a></div>
-              <div class="breadcrumb-item">Newsletter</div>
+              <div class="breadcrumb-item">Message</div>
             </div>
 		</div>
     </section>
@@ -32,15 +32,15 @@
 									</tr>
 								</thead>
 								<tbody> 
-									@forelse ($newsletter as $newsletter)
+									@forelse ($message as $message)
 									<tr class="odd">
-										<td>{{$newsletter-> id}}</td>
-										<td>{{$newsletter-> email}}</td>
-										<td>{{$newsletter-> email}}</td>
+										<td>{{$message-> id}}</td>
+										<td>{{$message-> name}}</td>
+										<td>{{$message-> email}}</td>
 										<td class="text-right py-0 align-middle">
 											<div class="btn-group btn-group-sm">
-                                                <button type="button" value="{{$newsletter->id}}" class="btn btn-info" id="newslettershBtn" ><i class="fas fa-eye" ></i> </button>&nbsp;
-												<button type="button" value="{{$newsletter->id}}" class="btn btn-danger" id="newsletterDbtn" ><i class="fas fa-trash"></i> </button>
+                                                <button type="button" value="{{$message->id}}" class="btn btn-info" id="messageshBtn" ><i class="fas fa-eye" ></i> </button>&nbsp;
+												<button type="button" value="{{$message->id}}" class="btn btn-danger" id="messageDbtn" ><i class="fas fa-trash"></i> </button>
 											</div>
 										</td>   
 									</tr>
@@ -56,12 +56,12 @@
 		</div>
 	</div>
 </div>
-<!-- show Newsletter Modal -->
-<div id="show___newsletter" class="modal custom-modal fade" role="dialog">
-	<div class="modal-dialog modal-dialog-centered" role="document">
+<!-- show Message Modal -->
+<div id="show___message" class="modal custom-modal fade" role="dialog">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Show Newsletter</h5>
+				<h5 class="modal-title">Show Message</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -70,8 +70,29 @@
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="form-group mb-5">
+							<label class="col-form-label">Name:&nbsp;</label>
+							<div class="" id="ShName"></div>
+						</div>
+					</div>
+
+                    <div class="col-sm-6">
+						<div class="form-group mb-5">
 							<label class="col-form-label">Email:&nbsp;</label>
 							<div class="" id="ShEmail"></div>
+						</div>
+					</div>
+
+                    <div class="col-sm-6">
+						<div class="form-group mb-5">
+							<label class="col-form-label">Phone:&nbsp;</label>
+							<div class="" id="ShPhone"></div>
+						</div>
+					</div>
+
+                    <div class="col-sm-6">
+						<div class="form-group mb-5">
+							<label class="col-form-label">Message:&nbsp;</label>
+							<div class="" id="ShMessage"></div>
 						</div>
 					</div>
 				</div>
@@ -79,23 +100,23 @@
 		</div>
 	</div>
 </div>
-<!-- /show Newsletter Modal -->
-<!-- Delete Newsletter Modal -->
-<div class="modal custom-modal fade" id="delete_newsletter" role="dialog">
+<!-- /show Message Modal -->
+<!-- Delete Message Modal -->
+<div class="modal custom-modal fade" id="delete_message" role="dialog">
 	<div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content">
 			<div class="modal-body">
 				<div class="form-header" style="text-align:center;">
-					<h3>Delete Newsletter</h3>
+					<h3>Delete Message</h3>
 					<p>Are you sure want to delete?</p>
 				</div>
 				<div class="modal-btn delete-action">
 					<div class="row float-right">
 						<div class="col-6">
-							<form action="{{url('delete-newsletter')}}" method="post" >
+							<form action="{{url('delete-message')}}" method="post" >
 								@csrf
 								@method("DELETE")
-                                <input type="hidden" id="delete_newsletterId" name="d_newsletter">
+                                <input type="hidden" id="delete_messageId" name="d_message">
                                 <button type="submit" class="btn btn-danger continue-btn">Delete</button>		
 							</form>
 						</div>
@@ -108,7 +129,7 @@
 		</div>
 	</div>
 </div>
-<!-- /Delete Newsletter Modal -->
+<!-- /Delete Message Modal -->
 @section('js')
 <script src="{{url('backends/assets/modules/datatables/datatables.min.js')}}"></script>
 <script src="{{url('backends/assets/modules/datatables/dataTables.bootstrap4.min.js')}}"></script>
@@ -117,28 +138,31 @@
 <script>
 	$(document).ready(function(){
 
-        $(document).on('click','#newsletterDbtn',function(){
+        $(document).on('click','#messageDbtn',function(){
             // alart("ok");
-			var newsletter_id=$(this).val();
-			$('#delete_newsletter').modal('show');
-			$('#delete_newsletterId').val(newsletter_id);
+			var message_id=$(this).val();
+			$('#delete_message').modal('show');
+			$('#delete_messageId').val(message_id);
 		});
 
 
-        $(document).on('click','#newslettershBtn',function(){
+        $(document).on('click','#messageshBtn',function(){
 			//  alert("ok");
 
-			var newslettersh_id=$(this).val();
-			// alert(newslettersh_id);
+			var messagesh_id=$(this).val();
+			// alert(messagesh_id);
 
-			$('#show___newsletter').modal('show');
+			$('#show___message').modal('show');
 			$.ajax({
 				type: "GET",
-				url: "/show-newsletter/"+newslettersh_id,
+				url: "/show-message/"+messagesh_id,
 				success:function(response){
 					console.log(response);
-					$('#cmbNewsletterSHId').html(newslettersh_id);
-					$('#ShEmail').html(response.newsletter.email);
+					$('#cmbMessageSHId').html(messagesh_id);
+					$('#ShName').html(response.message.name);
+					$('#ShEmail').html(response.message.email);
+					$('#ShPhone').html(response.message.phone);
+					$('#ShMessage').html(response.message.message);
 
 				}
 			});

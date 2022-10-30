@@ -12,4 +12,15 @@
     </div>
 </div>
 
+<section class="categories-banner-area">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12" style="background-color: #EFEFEF;">
+                <div>
+                    <img src="{{url('frontend/assets/img/categories/value.webp')}}" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 @endsection

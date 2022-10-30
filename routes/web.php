@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admins\UserController;
 use App\Http\Controllers\Admins\NewsletterController;
+use App\Http\Controllers\Admins\MessageController;
 use App\Http\Controllers\Admins\StatusController;
 use App\Http\Controllers\Admins\BrandController;
 use App\Http\Controllers\Admins\UnitController;
@@ -17,6 +18,7 @@ use App\Http\Controllers\Admins\ChildcategoryController;
 use App\Http\Controllers\Admins\QuicklinkController;
 use App\Http\Controllers\Admins\SociallinkController;
 use App\Http\Controllers\Admins\PartnerController;
+use App\Http\Controllers\Admins\ClientController;
 use App\Http\Controllers\Admins\TeamController;
 use App\Http\Controllers\Admins\TestimonialController;
 use App\Http\Controllers\Frontend\AboutusController;
@@ -105,6 +107,10 @@ Route::get('product_child_category/{slug}', [ProductchildcategoryController::cla
 Route::get('for-sub-cat', [ProductController::class, 'showSubCat'])->name('for-sub-cat');
 Route::get('for-child-cat', [ProductController::class, 'showChildCat'])->name('for-child-cat');
 
+
+////////////////////Message-Post/////////////////////////
+Route::post('message_store',[MessageController::class,'store' ])->name('message_store');
+
 Route::get('admin', function(){
     return redirect('login');
 });
@@ -129,6 +135,12 @@ Route::resource('status', App\Http\Controllers\Admins\StatusController::class);
 Route::get('edit-status/{id}', [StatusController::class, 'edit']);
 Route::put('status-update', [StatusController::class, 'update']);
 Route::delete('delete-status', [StatusController::class, 'destroy']);
+
+
+////////////////////Message/////////////////////////
+Route::resource('message', App\Http\Controllers\Admins\MessageController::class);
+Route::get('show-message/{id}',[MessageController::class,'show' ]);
+Route::delete('delete-message',[MessageController::class,'destroy' ]);
 
 
 // ////////////////////Brands/////////////////////////////////
@@ -225,6 +237,13 @@ Route::resource('partners', App\Http\Controllers\Admins\PartnerController::class
 Route::get('edit-partners/{id}', [PartnerController::class, 'edit']);
 Route::put('partners-update', [PartnerController::class, 'update']);
 Route::delete('delete-partners', [PartnerController::class, 'destroy']);
+
+
+// ////////////////////Clients/////////////////////////////////
+Route::resource('clients', App\Http\Controllers\Admins\ClientController::class);
+Route::get('edit-clients/{id}', [ClientController::class, 'edit']);
+Route::put('clients-update', [ClientController::class, 'update']);
+Route::delete('delete-clients', [ClientController::class, 'destroy']);
 
 
 // ////////////////////Our-Team/////////////////////////////////

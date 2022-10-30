@@ -12,6 +12,7 @@
       <li class="nav-item dropdown">
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-envelope"></i><span>Inbox</span></a>
         <ul class="dropdown-menu">
+          <li class=""><a class="nav-link" href="{{url('/message')}}">Message</a></li>
           <li class=""><a class="nav-link" href="{{url('/newsletter')}}">Newsletter</a></li>
         </ul>
       </li>
@@ -70,6 +71,7 @@
             <li class=""><a class="nav-link" href="{{url('/team')}}">Our Team</a></li>
             <li class=""><a class="nav-link" href="{{url('/testimonial')}}">Testimonial</a></li>
             <li class=""><a class="nav-link" href="{{url('/partners')}}">Our Partners</a></li>
+            <li class=""><a class="nav-link" href="{{url('/clients')}}">Our Clients</a></li>
             <li class=""><a class="nav-link" href="">FAQ</a></li>
             <li class=""><a class="nav-link" href="">Login Page</a></li>
         </ul>
