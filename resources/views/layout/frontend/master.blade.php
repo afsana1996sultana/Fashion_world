@@ -22,6 +22,12 @@
 <link rel="stylesheet" href="{{url('frontend/assets/css/responsive.css')}}">
 <title>Fashion World</title>
 <link rel="icon" type="image/png" href="{{url('frontend/assets/img/favicon.png')}}">
+<style>
+    .s_rslt:hover {
+        background-color: black;
+        height: 27px;
+    }
+</style>
 </head>
 
 <body>
@@ -75,6 +81,41 @@
 <script src="{{url('frontend/assets/js/contact-form-script.js')}}"></script>
 <script src="{{url('frontend/assets/js/ajaxchimp.min.js')}}"></script>
 <script src="{{url('frontend/assets/js/main.js')}}"></script>
+<script>
+    $(function(){
+
+    });
+    $('#search').on('keyup', function(){
+        $.ajax({
+            headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            url: "search_suggest",       
+            type: "get",
+            data: {
+                name: $(this).val()                
+            },
+            success: function( response ) {
+                console.log(response.length);
+                $('#s_s_rslt').html('');
+                if(response.length > 0){
+                    for(var i = 0; i<response.length; i++){
+                    $('#s_s_rslt').append(`
+                        <a class="col-12 s_rslt" href="`+response[i].slug+`">
+                                <div style="width:100%;" class="s_rslt_drop">`+response[i].name+`</div>
+                        </a> `);
+                    }  
+                }else{
+                $('#s_s_rslt').append(`
+                    <a class="col-12 s_rslt">
+                            No related data is found!
+                    </a> `);
+                } 
+            }   
+        });
+    });
+</script>
+
 </body>
 
 </html>

@@ -5,12 +5,12 @@
     </div>
     <ul class="sidebar-menu">
       <li class="active"><a class="nav-link" href="{{url('/dashboard')}}"><i class="fas fa-home"></i><span>Dashboard</span></a></li>     
-      <li class=""><a class="nav-link" href="{{url('/contactus')}}"><i class="fas fa-home"></i><span>Contact Us</span></a></li>
       <li class=""><a class="nav-link" href="{{url('/users')}}"><i class="fas fa-user"></i><span>Users</span></a></li>
+      <li class=""><a class="nav-link" href="{{url('/search')}}"><i class="fas fa-search"></i><span>Search</span></a></li>
 
 
       <li class="nav-item dropdown">
-        <a href="#" class="nav-link has-dropdown"><i class="fas fa-envelope"></i><span>Inbox</span></a>
+        <a href="#" class="nav-link has-dropdown"><i class="fas fa-envelope"></i><span>Contact Us</span></a>
         <ul class="dropdown-menu">
           <li class=""><a class="nav-link" href="{{url('/message')}}">Message</a></li>
           <li class=""><a class="nav-link" href="{{url('/newsletter')}}">Newsletter</a></li>

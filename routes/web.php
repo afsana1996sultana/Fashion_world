@@ -6,6 +6,7 @@ use App\Http\Controllers\Admins\UserController;
 use App\Http\Controllers\Admins\NewsletterController;
 use App\Http\Controllers\Admins\MessageController;
 use App\Http\Controllers\Admins\StatusController;
+use App\Http\Controllers\Admins\SearchController;
 use App\Http\Controllers\Admins\BrandController;
 use App\Http\Controllers\Admins\UnitController;
 use App\Http\Controllers\Admins\PromiseController;
@@ -56,6 +57,7 @@ Route::get('home', function(){
 });
 
 Route::get('/', [App\Http\Controllers\FrontendController::class, 'home'])->name('home');
+Route::get('/search_suggest', [App\Http\Controllers\Admins\SearchController::class, 'search_suggest'])->name('search_suggest');
 
 Route::get('home', [App\Http\Controllers\FrontendController::class, 'home'])->name('home');
 
@@ -135,6 +137,14 @@ Route::resource('status', App\Http\Controllers\Admins\StatusController::class);
 Route::get('edit-status/{id}', [StatusController::class, 'edit']);
 Route::put('status-update', [StatusController::class, 'update']);
 Route::delete('delete-status', [StatusController::class, 'destroy']);
+
+
+
+///////////////////////Search/////////////////////////////////
+Route::resource('search', App\Http\Controllers\Admins\SearchController::class);
+Route::get('edit-search/{id}', [SearchController::class, 'edit']);
+Route::put('search-update', [SearchController::class, 'update']);
+Route::delete('delete-search', [SearchController::class, 'destroy']);
 
 
 ////////////////////Message/////////////////////////
